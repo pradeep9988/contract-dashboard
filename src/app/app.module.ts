@@ -16,12 +16,12 @@ import { ChartsComponent } from './charts/charts.component';
 import { HighchartsChartModule } from "highcharts-angular";
 import { ContractRenewalComponent } from './contract-renewal/contract-renewal.component';
 import { ContractTerminationComponent } from './contract-termination/contract-termination.component';
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker/bs-datepicker.module';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContractRenewalDetailsComponent } from './contract-renewal-details/contract-renewal-details.component';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(MainRoutes), HighchartsChartModule, BrowserAnimationsModule, BsDatepickerModule.forRoot() ],
+  imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(MainRoutes), HighchartsChartModule, BrowserAnimationsModule, BsDatepickerModule ],
   declarations: [ AppComponent, HelloComponent, TypeOfContractComponent, NewContractComponent, GenerateContractComponent, ContractsLibraryComponent, ContractInsightsComponent, ApproverDashboardComponent, ContractHomeComponent, ChartsComponent, ContractRenewalComponent, ContractTerminationComponent, ContractRenewalDetailsComponent ],
   bootstrap:    [ AppComponent ]
 })
