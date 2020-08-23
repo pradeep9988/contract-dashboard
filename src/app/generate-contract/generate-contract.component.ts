@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import moment from 'moment';
+// import moment from 'moment';
 import { Router } from '@angular/router';
 
 @Component({

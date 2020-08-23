@@ -11,7 +11,7 @@
         <div class="question-wrap col-sm-12 py-3 my-2">
           <p class="mb-0 text-dark">What is the effective date of this contract?</p>
           <div class="info-wrap" [ngClass]="{'error': newContract.get('date').errors?.required && newContract.get('date').touched}">
-            <input type="text" class="form-control" placeholder="mm/dd/yyyy" bsDatepicker [bsConfig]="{ customTodayClass:'custom-today-class'}" formControlName="date" />
+            <input type="text" class="form-control" placeholder="mm/dd/yyyy" bsDatepicker" formControlName="date" />
         </div>
         </div>
 
