@@ -21,7 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContractRenewalDetailsComponent } from './contract-renewal-details/contract-renewal-details.component';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(MainRoutes), HighchartsChartModule, BrowserAnimationsModule, BsDatepickerModule ],
+  imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(MainRoutes), HighchartsChartModule, BrowserAnimationsModule, BsDatepickerModule.forRoot() ],
   declarations: [ AppComponent, HelloComponent, TypeOfContractComponent, NewContractComponent, GenerateContractComponent, ContractsLibraryComponent, ContractInsightsComponent, ApproverDashboardComponent, ContractHomeComponent, ChartsComponent, ContractRenewalComponent, ContractTerminationComponent, ContractRenewalDetailsComponent ],
   bootstrap:    [ AppComponent ]
 })
