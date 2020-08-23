@@ -1,0 +1,234 @@
+<section class="main-sec">
+      <div class="logo px-5 pt-3 text-right">
+          <a [routerLink]="['']"><img src="https://raw.githubusercontent.com/pradeep9988/contractdemo/gh-pages/img/logo.JPG" alt="logo"></a>
+        </div>
+    <div class="parent-wrap p-2 p-lg-5 pt-5">
+      <h1 class="contracts-wrap-head mb-3 mb-lg-5 text-dark">CONTRACT INSIGHTS</h1>
+        <div class="col-sm-12 contracts-lib p-5">
+          <div class="upper-block mb-5">
+            <p class="region p-2 mr-3">
+              REGION-WISE CONTRACTS <br> SIGNED THIS PERIOD
+            </p>
+            <div class="table-wrap table-responsive">
+
+            
+            <table class="table">
+              <tr>
+                <th></th>
+                <th>CALIFORNIA</th>
+              <th>NEVADA</th>
+              <th>WASHINGTON DC</th>
+              <th>FLORIDA</th></tr>
+              <tr>
+                <td>QUARTER OR YEAR</td>
+                <td>12</td>
+                <td>8</td>
+                <td>14</td>
+                <td>10</td>
+              </tr>
+            </table>
+          </div>
+          </div>
+          <hr class="mb-4">
+          <div class="lower-block">
+            <p class="region p-2 mr-3">
+              Contracts Signed
+            </p>
+            <div id="graph">
+              <div id="graph-container">
+              <highcharts-chart
+                [Highcharts]="Highcharts"
+                [options]="optionsOne">
+              </highcharts-chart>
+              </div>
+            </div>
+            <!-- <app-charts [optionsOne]="optionsOne"></app-charts> -->
+            
+          </div>
+          <div class="lower-block">
+            <p class="region p-2 mr-3">
+              Avg royalty signed region-wise
+            </p>
+            <div id="graph-two">
+              <div id="graph-bar">
+              <highcharts-chart
+                [Highcharts]="Highcharts"
+                [options]="optionsTwo">
+              </highcharts-chart>
+              </div>
+            </div>
+            <!-- <div id="graph-three">
+              <div id="graph-bar-two">
+
+              </div>
+            </div> -->
+            <!-- <app-charts [optionsOne]="optionsTwo"></app-charts> -->
+          </div>
+          <div class="lower-block">
+            <p class="region p-2 mr-3">
+              Avg term of renewal, region-wise
+            </p>
+            <div id="graph-three">
+              <div id="graph-bar-two">
+              <highcharts-chart
+                [Highcharts]="Highcharts"
+                [options]="optionsThree">
+              </highcharts-chart>
+              </div>
+            </div>
+            <!-- <app-charts [optionsOne]="optionsThree"></app-charts> -->
+          </div>
+        </div>
+        
+    </div>
+  </section>
+  <!-- <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="https://unpkg.com/popper@1.0.1/index.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script> -->
+<!-- <script>
+  console.log(Highcharts);
+Highcharts.chart('graph-container', {
+    chart: {
+        type: 'pie',
+        options3d: {
+            enabled: true,
+            alpha: 45,
+            beta: 0
+        }
+    },
+    title: {
+        text: ''
+    },
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            depth: 35,
+            dataLabels: {
+                enabled: true,
+                format: '{point.name}'
+            }
+        }
+    },
+    series: [{
+        type: 'pie',
+        name: 'Contracts Signed',
+        data: [
+            ['NEW', 56.0],
+            ['RENEWALS', 33.4],
+            /* {
+                name: 'Chrome',
+                y: 12.8,
+                sliced: true,
+                selected: true
+            }, */
+            ['TERMINATION', 10.6],
+           
+        ]
+    }]
+});
+
+Highcharts.chart('graph-bar', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: ''
+    },
+    xAxis: {
+        categories: [
+            'California',
+            'Nevada',
+            'Washington DC',
+            'Florida'
+            
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: ''
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0; font-size: 12px;">{series.name}: </td>' +
+            '<td style="padding:0; font-size: 12px;"><b>{point.y:.1f} %</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'Royalty Signed',
+        data: [4, 8, 9, 10]
+
+    }
+  
+    ]
+});
+
+Highcharts.chart('graph-bar-two', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: ''
+    },
+    xAxis: {
+        categories: [
+            'California',
+            'Nevada',
+            'Washington DC',
+            'Florida'
+            
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: ''
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0; font-size: 12px;">{series.name}: </td>' +
+            '<td style="padding:0; font-size: 12px;"><b>{point.y:.1f} </b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'Term of renewal',
+        data: [2, 1, 8, 15]
+
+    }
+  
+    ]
+});
+</script> -->

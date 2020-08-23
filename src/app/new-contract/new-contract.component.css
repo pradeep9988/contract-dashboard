@@ -1,0 +1,7 @@
+.custom-today-class{ background-color:blue; }
+select#term-date[disabled] {
+    background: #e9ecef;
+}
+.error input{
+  border: 1px solid #d4232c
+}

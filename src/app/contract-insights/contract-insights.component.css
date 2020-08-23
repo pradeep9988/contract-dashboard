@@ -1,0 +1,10 @@
+.highcharts-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+}
+.lower-block {
+    background: #fff;
+    margin-top: 20px;
+}

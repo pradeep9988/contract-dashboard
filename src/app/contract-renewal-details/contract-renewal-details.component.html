@@ -1,0 +1,104 @@
+<div class="wrap-popup" *ngIf="showAlertBox">
+<div class="alert-success">
+	<div class="py-3 px-4 alert-success-inner">
+		<p class="m-0">
+			<span class="fa fa-check mr-3"></span>
+			Contract has been successfully renewed.
+		</p>
+		<!-- <button type="button" class="alert-close" (click)="closeAlert()" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button> -->
+    <button (click)="closeAlert()" class="mt-4 btn newtype">DONE</button>
+	</div>
+</div>
+</div>
+<section class="main-sec">
+      <div class="logo px-5 pt-3 text-right">
+          <a [routerLink]="['']"><img src="https://raw.githubusercontent.com/pradeep9988/contractdemo/gh-pages/img/logo.JPG" alt="logo"></a>
+        </div>
+    <div class="parent-wrap pt-5">
+      <h2 class="new-restaurant-heading col-sm-12 col-xl-12 py-4">CONTRACT RENEWAL<span class="fa fa-pencil-square-o ml-3"></span></h2>
+      <div class="questions col-sm-10 col-xl-7 px-0">
+        <form [formGroup]='contractRenewal'>
+
+        
+
+        <!-- qsn 2 -->
+        <div class="question-wrap col-sm-12 py-3 my-2">
+          <p class="mb-0 text-dark">Which region does this Contract fall under?</p>
+          <div class="info-wrap">
+            <select class="question-wrap-select" (change)="divisionChange($event)" formControlName="division" name="division" id="division-select">
+              <option *ngFor="let area of mainData.regionData" [value]="area.value">{{ area.name }}</option>
+            </select>
+        </div>
+        </div>
+        <div class="question-wrap col-sm-12 py-3 my-2">
+          <p class="mb-0 text-dark">Please choose the division of the entity falls under.</p>
+          <div class="info-wrap" *ngIf="contractRenewal.get('division').value=='North West'">
+            <select class="question-wrap-select " formControlName="region" name="region" id="region-select">
+              <option *ngFor="let area of mainData.northWestData" [value]="area.value">{{ area.name }}</option>
+            </select>
+        </div>
+          <div class="info-wrap" *ngIf="contractRenewal.get('division').value=='North East'">
+            <select class="question-wrap-select " formControlName="region" name="region" id="region-select">
+              <option *ngFor="let area of mainData.northEastData" [value]="area.value">{{ area.name }}</option>
+            </select>
+        </div>
+          <div class="info-wrap" *ngIf="contractRenewal.get('division').value=='East'">
+            <select class="question-wrap-select " formControlName="region" name="region" id="region-select">
+              <option *ngFor="let area of mainData.eastData" [value]="area.value">{{ area.name }}</option>
+            </select>
+        </div>
+        </div>
+
+        <div class="question-wrap col-sm-12 py-3 my-2">
+          <p class="mb-0 text-dark">What is the document type?</p>
+          <div class="info-wrap">
+            <select class="question-wrap-select" formControlName="documentType" name="documentType" id="documentType-select">
+              <option *ngFor="let area of mainData.documentType" [value]="area.value">{{ area.name }}</option>
+            </select>
+          </div>
+        </div>
+        <div class="question-wrap col-sm-12 py-3 my-2" *ngIf="contractRenewal.get('documentType').value=='PAF Letters'">
+          <p class="mb-0 text-dark">What is the PAF SUB TYPE?</p>
+          <div class="info-wrap">
+            <select class="question-wrap-select" formControlName="pafSubType" name="pafSubType" id="pafSubType-select">
+              <option *ngFor="let area of mainData.pafSubType" [value]="area.value">{{ area.name }}</option>
+            </select>
+          </div>
+        </div>
+
+
+
+        <div class="question-wrap col-sm-12 py-3 my-2">
+          <p class="mb-0 text-dark">Share the full address of the site.</p>
+          <div class="info-wrap">
+            <input type="text" formControlName="fullAdd" class="form-control" name="fullAdd">
+          </div>
+        </div>
+
+        <div class="question-wrap col-sm-12 py-3 my-2">
+          <p class="mb-0 text-dark">Current Expiry Date?</p>
+          <div class="info-wrap">
+            <input type="text" class="form-control" placeholder="mm/dd/yyyy" #dp="bsDatepicker" bsDatepicker />
+         </div>
+        </div>
+        <div class="question-wrap col-sm-12 py-3 my-2">
+          <p class="mb-0 text-dark">New Expiry Date?</p>
+          <div class="info-wrap">
+            <input type="text" class="form-control" placeholder="mm/dd/yyyy" #dp2="bsDatepicker" bsDatepicker />
+        </div> 
+        </div>
+
+
+        <div class="col-sm-12 my-5 text-right">
+          <!-- <button type="button" onclick="getFormObj('newform')" class="btn btn-primary">PREVIEW</button> -->
+          <!-- <input type="submit" class="btn btn-primary" value="PREVIEW" onclick="getFormObj('newform', $event)"> -->
+          <button (click)="renew()" class="btn newtype">RENEW</button>
+        </div>
+      </form>
+      </div>
+      <!-- <small>{{contractRenewal.value|json}}</small> -->
+    </div>
+
+  </section>

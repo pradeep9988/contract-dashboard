@@ -1,0 +1,19 @@
+ <section class="main-sec">
+      <div class="logo px-5 pt-3 text-right">
+          <a [routerLink]="['']"><img src="https://raw.githubusercontent.com/pradeep9988/contractdemo/gh-pages/img/logo.JPG" alt="logo"></a>
+        </div>
+    <div class="parent-wrap">
+    <!-- <h1 class="col-sm-10 col-xl-7 mb-4 parent-heading">FRANCHISE CONTRACT DASHBOARD</h1> -->
+    <div class="type-contract col-sm-12 col-xl-12">
+      <h1 class="type-of-contract col-sm-12 py-3">
+       What type of contract would you like to draft?    
+       </h1>
+       <div class="types mt-5 ml-0 ml-sm-5">
+         <p><button (click)="navToNewContract()" class="btn btn-primary newtype ml-4">NEW CONTRACT</button></p>
+         <p><a (click)="navToRenewal()" class="btn btn-primary newtype ml-4">RENEWAL</a></p>
+         <p><a (click)="navToTermination()" class="btn btn-primary newtype ml-4">TERMINATION</a></p>
+       </div>
+   </div>
+    </div>
+
+  </section>
