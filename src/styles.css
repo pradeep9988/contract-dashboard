@@ -131,7 +131,7 @@ h1, h2, h3, h4, h5 {
         justify-content: flex-end;
       }
       span.logo-wrap {
-        background: #ddd url(../dist/img/logo.JPG) no-repeat center;
+        background: #ddd;
         width: 143px;
         height: 73px;
         display: block;
