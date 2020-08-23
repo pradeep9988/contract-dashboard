@@ -16,7 +16,7 @@ import { ChartsComponent } from './charts/charts.component';
 import { HighchartsChartModule } from "highcharts-angular";
 import { ContractRenewalComponent } from './contract-renewal/contract-renewal.component';
 import { ContractTerminationComponent } from './contract-termination/contract-termination.component';
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker/bs-datepicker.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContractRenewalDetailsComponent } from './contract-renewal-details/contract-renewal-details.component';
 
